@@ -1,0 +1,18 @@
+const int analogPin = A0; // Analog giriş pini A0
+
+void setup() {
+  Serial.begin(9600); // Seri iletişimi başlat
+}
+
+void loop() {
+  int analogValue = analogRead(analogPin); // Analog değeri oku
+
+  Serial.print(analogValue); // Seri monitöre mesaj yazdır
+  if (analogValue != 0) { // Eğer analog değeri 0 ise
+    Serial.println("Kablo çekildi!"); // Seri monitöre mesaj yazdır
+  }else{
+    Serial.println("Kablo takılı!"); // Seri monitöre mesaj yazdır
+  }
+  
+  delay(100); // 0.1 saniye bekle
+}
